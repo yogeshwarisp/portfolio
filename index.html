@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yogeshwari Sandip Pawar | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom: 8px solid #ffd700;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 3.5em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    header a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    /* Navigation Buttons */
+    .contact-btn,
+    .section-btn {
+      padding: 12px 28px;
+      font-size: 1.1em;
+      font-weight: 700;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 20px 10px;
+      display: inline-block;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      color: white;
+      background-color: black;
+      text-transform: uppercase;
+    }
+
+    .contact-btn:hover,
+    .section-btn:hover {
+      background-color: #333;
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Sections */
+    section {
+      margin: 60px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 15px;
+      max-width: 1200px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+      transition-delay: 0.2s;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #4b6cb7;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+      border-bottom: 3px solid #ffd700;
+      padding-bottom: 10px;
+    }
+
+    /* Introduction Section Styling */
+    #intro {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    #profile-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px solid #ffd700;
+      object-fit: cover;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    #profile-photo:hover {
+      transform: scale(1.05);
+    }
+
+    #intro-text {
+      flex: 1;
+    }
+
+    /* Certificate Styling */
+    .certificate {
+      display: none;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .certificate.show {
+      display: block;
+    }
+
+    footer {
+      background-color: #182848;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1em;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+
+      section {
+        margin: 20px;
+        padding: 25px;
+      }
+
+      section h2 {
+        font-size: 1.8em;
+      }
+
+      #intro {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Yogeshwari Sandip Pawar</h1>
+  <p>UI/UX Designer — Front-End Developer — Java Developer</p>
+  <p>Email: <a href="mailto:yogeshwaripawar2003@gmail.com">yogeshwaripawar2003@gmail.com</a></p>
+  <p>Location: Pune, Maharashtra, India</p>
+  <p><a href="https://www.linkedin.com" target="_blank">LinkedIn Profile</a></p>
+  <button class="contact-btn" onclick="contactMe()">Contact Me</button>
+</header>
+
+<!-- Navigation Buttons -->
+<div style="text-align: center; margin: 20px;">
+  <button class="section-btn" onclick="scrollToSection('intro')">Introduction</button>
+  <button class="section-btn" onclick="scrollToSection('summary')">Summary</button>
+  <button class="section-btn" onclick="scrollToSection('technical-skills')">Technical Skills</button>
+  <button class="section-btn" onclick="scrollToSection('education')">Education</button>
+  <button class="section-btn" onclick="scrollToSection('certifications')">Certifications</button>
+  <button class="section-btn" onclick="scrollToSection('projects')">Projects</button>
+  <button class="section-btn" onclick="scrollToSection('languages')">Languages</button>
+</div>
+
+<!-- Sections -->
+<section id="intro">
+  <img id="profile-photo" src="yoga.jpg" alt="Profile Photo">
+  <div id="intro-text">
+    <h2>Introduction</h2>
+    <p>Hi, I am Yogeshwari Sandip Pawar, a passionate and dedicated UI/UX Designer and Developer. I focus on creating exceptional user experiences and developing efficient, user-friendly applications. With a strong background in both front-end and back-end technologies, I am capable of building robust, full-stack applications.</p>
+  </div>
+</section>
+
+<section id="summary">
+  <h2>Summary</h2>
+  <p>Innovative and detail-oriented UI/UX Designer, Front-End Developer, and Java Developer with a strong background in creating user-friendly, visually appealing, and high-performing web applications. Experienced in UI/UX design principles, front-end technologies (HTML, CSS, JavaScript, React), and back-end development with Java and Spring Boot.</p>
+</section>
+
+<section id="technical-skills">
+  <h2>Technical Skills</h2>
+  <ul>
+    <li>UI/UX Design: Wireframing, Prototyping, User Research, Usability Testing</li>
+    <li>Design Tools: Figma, Adobe XD, Sketch</li>
+    <li>Front-End: HTML, CSS, JavaScript, React, Bootstrap</li>
+    <li>Back-End: Java Full Stack, Spring Boot, REST APIs</li>
+    <li>Database: MySQL, Firebase</li>
+    <li>Soft Skills: Problem-Solving, Communication, Collaboration, Agile Methodologies</li>
+  </ul>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <p><strong>Dr. D. Y. Patil College of Engineering and Innovation, Pune</strong><br>
+  B.Tech in Computer Engineering — 2025<br>
+  CGPA: 7.35</p>
+</section>
+
+<section id="certifications">
+  <h2>Certifications</h2>
+  <div>
+    <h3>Power BI Certification</h3>
+    <p><strong>Feb 5, 2025 - Feb 10, 2025</strong><br>Certification covering Power BI fundamentals, data modeling, and visualization techniques.</p>
+    <button class="section-btn" onclick="showCertificate('certificate1')">Show Certificate</button>
+    <img id="certificate1" class="certificate" src="certificate.pdf" alt="Power BI Certificate">
+  </div>
+
+  <div style="margin-top: 40px;">
+    <h3>SQL Certification</h3>
+    <p><strong>Mar 1, 2025 - Mar 7, 2025</strong><br>Certification covering SQL Queries, Joins, Database Management, and Optimization.</p>
+    <button class="section-btn" onclick="showCertificate('certificate2')">Show Certificate</button>
+    <img id="certificate2" class="certificate" src="SQL.jpg" alt="SQL Certificate">
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li>User-Centric Mobile App UI Redesign (2024) — Improved usability by 30%.</li>
+    <li>E-Commerce Website UX Enhancement (2023) — Reduced cart abandonment by 25%.</li>
+    <li>Portfolio Website Development (2022) — Designed a responsive personal website.</li>
+  </ul>
+</section>
+
+<section id="languages">
+  <h2>Languages</h2>
+  <ul>
+    <li>English (Fluent)</li>
+    <li>Hindi (Fluent)</li>
+    <li>Marathi (Fluent)</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2025 Yogeshwari Sandip Pawar | All Rights Reserved</p>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section');
+  window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight / 1.2;
+    sections.forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      if (top < triggerBottom) {
+        section.classList.add('visible');
+      }
+    });
+  });
+
+  function scrollToSection(id) {
+    const section = document.getElementById(id);
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function contactMe() {
+    window.location.href = "mailto:yogeshwaripawar2003@gmail.com";
+  }
+
+  function showCertificate(certId) {
+    const certificate = document.getElementById(certId);
+    certificate.classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>
